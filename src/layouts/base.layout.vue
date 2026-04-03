@@ -140,8 +140,8 @@ const tools = computed<ToolCategory[]>(() => [
   transition: all 0.3s ease;
 }
 
-.sider-content {
-  padding-top: 160px;
+  .sider-content {
+    padding-top: 160px;
   padding-bottom: 200px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -171,29 +171,31 @@ const tools = computed<ToolCategory[]>(() => [
   width: 100%;
   z-index: 10;
   padding: 20px 0;
-  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+  background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   transition: all 0.3s ease;
+  border-bottom: 1px solid #e2e8f0;
 
   .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #1e293b;
 
     .logo-img {
       width: 60px;
       height: 60px;
       object-fit: contain;
       margin-bottom: 8px;
-      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
     }
 
     .title {
       font-size: 22px;
       font-weight: 700;
       letter-spacing: 1px;
-      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+      color: #2563eb;
+      text-shadow: none;
     }
   }
 }

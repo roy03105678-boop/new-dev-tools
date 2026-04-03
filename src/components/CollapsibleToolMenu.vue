@@ -143,11 +143,11 @@ const themeVars = useThemeVars();
   &.n-menu-item--selected,
   &.n-menu-item--selected:hover {
     .n-menu-item-content {
-      color: #ffffff !important;
+      color: #2563eb !important;
     }
 
     .n-icon {
-      color: #ffffff !important;
+      color: #2563eb !important;
     }
   }
 
