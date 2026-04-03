@@ -39,7 +39,7 @@ const tools = computed<ToolCategory[]>(() => [
         <div class="logo-container">
           <img :src="NewLogo" class="logo-img" alt="工具集合站" />
           <div class="title">工具集合站</div>
-          <div class="subtitle">专注打造即用即走的开发者助手</div>
+          <div class="subtitle">打造即用即走的效率助手</div>
         </div>
       </RouterLink>
 
