@@ -5,6 +5,7 @@ import { computed } from 'vue';
 import Draggable from 'vuedraggable';
 import ColoredCard from '../components/ColoredCard.vue';
 import ToolCard from '../components/ToolCard.vue';
+import TodayOverview from '../components/TodayOverview.vue';
 import { useToolStore } from '@/tools/tools.store';
 import { config } from '@/config';
 
@@ -23,6 +24,7 @@ function onUpdateFavoriteTools() {
 
 <template>
   <div class="home-container">
+    <TodayOverview />
     <div class="grid-wrapper">
       <div class="grid grid-cols-1 gap-12px lg:grid-cols-3 md:grid-cols-3 sm:grid-cols-2 xl:grid-cols-4">
         <ColoredCard v-if="config.showBanner" :title="$t('home.follow.title')" :icon="IconHeart">
