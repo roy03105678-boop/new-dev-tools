@@ -41,11 +41,11 @@ const { qrcode } = useQRCode({
 
 const secretValidationRules = [
   {
-    message: 'Secret should be a base32 string',
+    message: '密钥应为 base32 字符串',
     validator: (value: string) => value.toUpperCase().match(/^[A-Z234567]+$/),
   },
   {
-    message: 'Please set a secret',
+    message: '请设置密钥',
     validator: (value: string) => value !== '',
   },
 ];
@@ -55,13 +55,13 @@ const secretValidationRules = [
   <div style="max-width: 350px">
     <c-input-text
       v-model:value="secret"
-      label="Secret"
-      placeholder="Paste your TOTP secret..."
+      label="密钥"
+      placeholder="请粘贴您的 TOTP 密钥..."
       mb-5
       :validation-rules="secretValidationRules"
     >
       <template #suffix>
-        <c-tooltip tooltip="Generate a new random secret">
+          <c-tooltip tooltip="生成新的随机密钥">
           <c-button circle variant="text" size="small" @click="refreshSecret">
             <icon-mdi-refresh />
           </c-button>
@@ -74,53 +74,53 @@ const secretValidationRules = [
 
       <n-progress :percentage="(100 * interval) / 30" :color="theme.primaryColor" :show-indicator="false" />
       <div style="text-align: center">
-        Next in {{ String(Math.floor(30 - interval)).padStart(2, '0') }}s
+        下一个在 {{ String(Math.floor(30 - interval)).padStart(2, '0') }} 秒后
       </div>
     </div>
     <div mt-4 flex flex-col items-center justify-center gap-3>
       <n-image :src="qrcode" />
       <c-button :href="keyUri" target="_blank">
-        Open Key URI in new tab
+        在新标签页打开 Key URI
       </c-button>
     </div>
   </div>
   <div style="max-width: 350px">
     <InputCopyable
-      label="Secret in hexadecimal"
+      label="十六进制密钥"
       :value="base32toHex(secret)"
       readonly
-      placeholder="Secret in hex will be displayed here"
+      placeholder="十六进制密钥将显示在此"
       mb-5
     />
 
     <InputCopyable
-      label="Epoch"
+      label="Unix 时间戳"
       :value="Math.floor(now / 1000).toString()"
       readonly
       mb-5
-      placeholder="Epoch in sec will be displayed here"
+      placeholder="秒级 Unix 时间戳将显示在此"
     />
 
-    <p>Iteration</p>
+    <p>迭代次数</p>
 
     <InputCopyable
       :value="String(getCounterFromTime({ now, timeStep: 30 }))"
       readonly
-      label="Count:"
+      label="次数："
       label-position="left"
       label-width="90px"
       label-align="right"
-      placeholder="Iteration count will be displayed here"
+      placeholder="迭代次数将显示在此"
     />
 
     <InputCopyable
       :value="getCounterFromTime({ now, timeStep: 30 }).toString(16).padStart(16, '0')"
       readonly
-      placeholder="Iteration count in hex will be displayed here"
+      placeholder="十六进制迭代次数将显示在此"
       label-position="left"
       label-width="90px"
       label-align="right"
-      label="Padded hex:"
+      label="补齐十六进制："
     />
   </div>
 </template>

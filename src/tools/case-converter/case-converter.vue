@@ -22,59 +22,59 @@ const input = ref('lorem ipsum dolor sit amet');
 
 const formats = computed(() => [
   {
-    label: 'Lowercase:',
+    label: '小写：',
     value: input.value.toLocaleLowerCase(),
   },
   {
-    label: 'Uppercase:',
+    label: '大写：',
     value: input.value.toLocaleUpperCase(),
   },
   {
-    label: 'Camelcase:',
+    label: '驼峰命名：',
     value: camelCase(input.value, baseConfig),
   },
   {
-    label: 'Capitalcase:',
+    label: '首字母大写：',
     value: capitalCase(input.value, baseConfig),
   },
   {
-    label: 'Constantcase:',
+    label: '常量命名：',
     value: constantCase(input.value, baseConfig),
   },
   {
-    label: 'Dotcase:',
+    label: '点分隔命名：',
     value: dotCase(input.value, baseConfig),
   },
   {
-    label: 'Headercase:',
+    label: '标题命名：',
     value: headerCase(input.value, baseConfig),
   },
   {
-    label: 'Nocase:',
+    label: '无格式：',
     value: noCase(input.value, baseConfig),
   },
   {
-    label: 'Paramcase:',
+    label: '参数命名：',
     value: paramCase(input.value, baseConfig),
   },
   {
-    label: 'Pascalcase:',
+    label: 'Pascal命名：',
     value: pascalCase(input.value, baseConfig),
   },
   {
-    label: 'Pathcase:',
+    label: '路径命名：',
     value: pathCase(input.value, baseConfig),
   },
   {
-    label: 'Sentencecase:',
+    label: '句子命名：',
     value: sentenceCase(input.value, baseConfig),
   },
   {
-    label: 'Snakecase:',
+    label: '蛇形命名：',
     value: snakeCase(input.value, baseConfig),
   },
   {
-    label: 'Mockingcase:',
+    label: '模拟命名：',
     value: input.value
       .split('')
       .map((char, index) => (index % 2 === 0 ? char.toUpperCase() : char.toLowerCase()))
@@ -93,8 +93,8 @@ const inputLabelAlignmentConfig = {
   <c-card>
     <c-input-text
       v-model:value="input"
-      label="Your string:"
-      placeholder="Your string..."
+      label="您的字符串："
+      placeholder="请输入字符串..."
       raw-text
       v-bind="inputLabelAlignmentConfig"
     />

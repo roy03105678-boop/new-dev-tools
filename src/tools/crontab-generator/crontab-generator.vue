@@ -20,73 +20,73 @@ const cronstrueConfig = reactive({
 const helpers = [
   {
     symbol: '*',
-    meaning: 'Any value',
+    meaning: '任意値',
     example: '* * * *',
-    equivalent: 'Every minute',
+    equivalent: '每分钟',
   },
   {
     symbol: '-',
-    meaning: 'Range of values',
+    meaning: '値的范围',
     example: '1-10 * * *',
-    equivalent: 'Minutes 1 through 10',
+    equivalent: '第 1 到 10 分钟',
   },
   {
     symbol: ',',
-    meaning: 'List of values',
+    meaning: '値的列表',
     example: '1,10 * * *',
-    equivalent: 'At minutes 1 and 10',
+    equivalent: '在第 1 和第 10 分钟',
   },
   {
     symbol: '/',
-    meaning: 'Step values',
+    meaning: '步进値',
     example: '*/10 * * *',
-    equivalent: 'Every 10 minutes',
+    equivalent: '每 10 分钟',
   },
   {
     symbol: '@yearly',
-    meaning: 'Once every year at midnight of 1 January',
+    meaning: '每年 1 月 1 日凌晨执行一次',
     example: '@yearly',
     equivalent: '0 0 1 1 *',
   },
   {
     symbol: '@annually',
-    meaning: 'Same as @yearly',
+    meaning: '与 @yearly 相同',
     example: '@annually',
     equivalent: '0 0 1 1 *',
   },
   {
     symbol: '@monthly',
-    meaning: 'Once a month at midnight on the first day',
+    meaning: '每月第一天凌晨执行一次',
     example: '@monthly',
     equivalent: '0 0 1 * *',
   },
   {
     symbol: '@weekly',
-    meaning: 'Once a week at midnight on Sunday morning',
+    meaning: '每周日凌晨执行一次',
     example: '@weekly',
     equivalent: '0 0 * * 0',
   },
   {
     symbol: '@daily',
-    meaning: 'Once a day at midnight',
+    meaning: '每天凌晨执行一次',
     example: '@daily',
     equivalent: '0 0 * * *',
   },
   {
     symbol: '@midnight',
-    meaning: 'Same as @daily',
+    meaning: '与 @daily 相同',
     example: '@midnight',
     equivalent: '0 0 * * *',
   },
   {
     symbol: '@hourly',
-    meaning: 'Once an hour at the beginning of the hour',
+    meaning: '每小时整点执行一次',
     example: '@hourly',
     equivalent: '0 * * * *',
   },
   {
     symbol: '@reboot',
-    meaning: 'Run at startup',
+    meaning: '启动时执行',
     example: '',
     equivalent: '',
   },
@@ -102,7 +102,7 @@ const cronString = computed(() => {
 const cronValidationRules = [
   {
     validator: (value: string) => isCronValid(value),
-    message: 'This cron is invalid',
+    message: '该 Cron 表达式无效',
   },
 ];
 </script>
@@ -127,13 +127,13 @@ const cronValidationRules = [
 
     <div flex justify-center>
       <n-form :show-feedback="false" label-width="170" label-placement="left">
-        <n-form-item label="Verbose">
+        <n-form-item label="详细模式">
           <n-switch v-model:value="cronstrueConfig.verbose" />
         </n-form-item>
-        <n-form-item label="Use 24 hour time format">
+        <n-form-item label="使用24小时格式">
           <n-switch v-model:value="cronstrueConfig.use24HourTimeFormat" />
         </n-form-item>
-        <n-form-item label="Days start at 0">
+        <n-form-item label="星期从 0 开始">
           <n-switch v-model:value="cronstrueConfig.dayOfWeekStartIndexZero" />
         </n-form-item>
       </n-form>
@@ -153,17 +153,17 @@ const cronValidationRules = [
     <div v-if="styleStore.isSmallScreen">
       <c-card v-for="{ symbol, meaning, example, equivalent } in helpers" :key="symbol" mb-3 important:border-none>
         <div>
-          Symbol: <strong>{{ symbol }}</strong>
+          符号： <strong>{{ symbol }}</strong>
         </div>
         <div>
-          Meaning: <strong>{{ meaning }}</strong>
+          含义： <strong>{{ meaning }}</strong>
         </div>
         <div>
-          Example:
+          示例：
           <strong><code>{{ example }}</code></strong>
         </div>
         <div>
-          Equivalent: <strong>{{ equivalent }}</strong>
+          等价： <strong>{{ equivalent }}</strong>
         </div>
       </c-card>
     </div>

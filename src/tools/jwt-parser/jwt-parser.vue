@@ -13,8 +13,8 @@ const decodedJWT = computed(() =>
 );
 
 const sections = [
-  { key: 'header', title: 'Header' },
-  { key: 'payload', title: 'Payload' },
+  { key: 'header', title: '头部' },
+  { key: 'payload', title: '负载' },
 ] as const;
 
 const validation = useValidation({
@@ -22,7 +22,7 @@ const validation = useValidation({
   rules: [
     {
       validator: value => value.length > 0 && isNotThrowing(() => decodeJwt({ jwt: rawJwt.value })),
-      message: 'Invalid JWT',
+      message: '无效的 JWT',
     },
   ],
 });
@@ -30,7 +30,7 @@ const validation = useValidation({
 
 <template>
   <c-card>
-    <c-input-text v-model:value="rawJwt" label="JWT to decode" :validation="validation" placeholder="Put your token here..." rows="5" multiline raw-text autofocus mb-3 />
+    <c-input-text v-model:value="rawJwt" label="要解码的 JWT" :validation="validation" placeholder="请在此输入您的 Token..." rows="5" multiline raw-text autofocus mb-3 />
 
     <n-table v-if="validation.isValid">
       <tbody>

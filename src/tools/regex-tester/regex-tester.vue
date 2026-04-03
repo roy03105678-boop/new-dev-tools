@@ -95,33 +95,33 @@ watchEffect(
     <c-card title="Regex" mb-1>
       <c-input-text
         v-model:value="regex"
-        label="Regex to test:"
-        placeholder="Put the regex to test"
+        label="要测试的正则表达式："
+        placeholder="请输入要测试的正则表达式"
         multiline
         rows="3"
         :validation="regexValidation"
       />
       <router-link target="_blank" to="/regex-memo" mb-1 mt-1>
-        See Regular Expression Cheatsheet
+        查看正则表达式备忘单
       </router-link>
       <n-space>
         <n-checkbox v-model:checked="global">
-          <span title="Global search">Global search. (<code>g</code>)</span>
+          <span title="全局搜索">全局搜索。(<code>g</code>)</span>
         </n-checkbox>
         <n-checkbox v-model:checked="ignoreCase">
-          <span title="Case-insensitive search">Case-insensitive search. (<code>i</code>)</span>
+          <span title="不区分大小写搜索">不区分大小写搜索。(<code>i</code>)</span>
         </n-checkbox>
         <n-checkbox v-model:checked="multiline">
-          <span title="Allows ^ and $ to match next to newline characters.">Multiline(<code>m</code>)</span>
+          <span title="允许 ^ 和 $ 匹配换行符旁边。">多行模式(<code>m</code>)</span>
         </n-checkbox>
         <n-checkbox v-model:checked="dotAll">
-          <span title="Allows . to match newline characters.">Singleline(<code>s</code>)</span>
+          <span title="允许 . 匹配换行符。">单行模式(<code>s</code>)</span>
         </n-checkbox>
         <n-checkbox v-model:checked="unicode">
-          <span title="Unicode; treat a pattern as a sequence of Unicode code points.">Unicode(<code>u</code>)</span>
+          <span title="Unicode：将模式视为 Unicode 码点序列。">Unicode(<code>u</code>)</span>
         </n-checkbox>
         <n-checkbox v-model:checked="unicodeSets">
-          <span title="An upgrade to the u mode with more Unicode features.">Unicode Sets (<code>v</code>)</span>
+          <span title="u 模式的升级版，支持更多 Unicode 功能。">Unicode 集合(<code>v</code>)</span>
         </n-checkbox>
       </n-space>
 
@@ -129,28 +129,28 @@ watchEffect(
 
       <c-input-text
         v-model:value="text"
-        label="Text to match:"
-        placeholder="Put the text to match"
+        label="要匹配的文本："
+        placeholder="请输入要匹配的文本"
         multiline
         rows="5"
       />
     </c-card>
 
-    <c-card title="Matches" mb-1 mt-3>
+    <c-card title="匹配结果" mb-1 mt-3>
       <n-table v-if="results?.length > 0">
         <thead>
           <tr>
             <th scope="col">
-              Index in text
+              在文本中的位置
             </th>
             <th scope="col">
-              Value
+              匹配内容
             </th>
             <th scope="col">
-              Captures
+              捕获组
             </th>
             <th scope="col">
-              Groups
+              命名组
             </th>
           </tr>
         </thead>
@@ -176,15 +176,15 @@ watchEffect(
         </tbody>
       </n-table>
       <c-alert v-else>
-        No match
+        无匹配结果
       </c-alert>
     </c-card>
 
-    <c-card title="Sample matching text" mt-3>
+    <c-card title="示例匹配文本" mt-3>
       <pre style="white-space: pre-wrap; word-break: break-all;">{{ sample }}</pre>
     </c-card>
 
-    <c-card title="Regex Diagram" style="overflow-x: scroll;" mt-3>
+    <c-card title="正则表达式图示" style="overflow-x: scroll;" mt-3>
       <shadow-root ref="visualizerSVG">
 &#xa0;
       </shadow-root>

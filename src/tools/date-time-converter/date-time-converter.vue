@@ -35,7 +35,7 @@ const toDate: ToDateMapper = date => new Date(date);
 
 const formats: DateFormat[] = [
   {
-    name: 'JS locale date string',
+    name: 'JS 本地日期字符串',
     fromDate: date => date.toString(),
     toDate,
     formatMatcher: () => false,
@@ -65,19 +65,19 @@ const formats: DateFormat[] = [
     formatMatcher: date => isRFC7231DateString(date),
   },
   {
-    name: 'Unix timestamp',
+    name: 'Unix 时间戳',
     fromDate: date => String(getUnixTime(date)),
     toDate: sec => fromUnixTime(+sec),
     formatMatcher: date => isUnixTimestamp(date),
   },
   {
-    name: 'Timestamp',
+    name: '时间戳',
     fromDate: date => String(getTime(date)),
     toDate: ms => parseJSON(+ms),
     formatMatcher: date => isTimestamp(date),
   },
   {
-    name: 'UTC format',
+    name: 'UTC 格式',
     fromDate: date => date.toUTCString(),
     toDate,
     formatMatcher: date => isUTCDateString(date),
@@ -89,7 +89,7 @@ const formats: DateFormat[] = [
     formatMatcher: date => isMongoObjectId(date),
   },
   {
-    name: 'Excel date/time',
+    name: 'Excel 日期/时间',
     fromDate: date => dateToExcelFormat(date),
     toDate: excelFormatToDate,
     formatMatcher: isExcelFormat,
@@ -126,7 +126,7 @@ const validation = useValidation({
   watch: [formatIndex],
   rules: [
     {
-      message: 'This date is invalid for this format',
+      message: '该日期对于此格式无效',
       validator: value =>
         withDefaultOnError(() => {
           if (value === '') {
@@ -155,7 +155,7 @@ function formatDateUsingFormatter(formatter: (date: Date) => string, date?: Date
       <c-input-text
         v-model:value="inputDate"
         autofocus
-        placeholder="Put your date string here..."
+        placeholder="请在此处输入日期字符串..."
         clearable
         test-id="date-time-converter-input"
         :validation="validation"
@@ -180,7 +180,7 @@ function formatDateUsingFormatter(formatter: (date: Date) => string, date?: Date
       label-position="left"
       label-align="right"
       :value="formatDateUsingFormatter(fromDate, normalizedDate)"
-      placeholder="Invalid date..."
+      placeholder="无效日期..."
       :test-id="name"
       readonly
       mt-2

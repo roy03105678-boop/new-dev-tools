@@ -17,9 +17,9 @@ const rules: UseValidationRule<string>[] = [
 
 <template>
   <format-transformer
-    input-label="Your JSON"
-    input-placeholder="Paste your JSON here..."
-    output-label="YAML from your JSON"
+    input-label="您的 JSON"
+    input-placeholder="请在此粘贴您的 JSON..."
+    output-label="JSON 转 YAML"
     output-language="yaml"
     :input-validation-rules="rules"
     :transformer="transformer"

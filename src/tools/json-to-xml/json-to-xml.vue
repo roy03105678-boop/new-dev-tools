@@ -21,10 +21,10 @@ const rules: UseValidationRule<string>[] = [
 
 <template>
   <format-transformer
-    input-label="Your JSON content"
+    input-label="您的 JSON 内容"
     :input-default="defaultValue"
-    input-placeholder="Paste your JSON content here..."
-    output-label="Converted XML"
+    input-placeholder="请在此粘贴您的 JSON 内容..."
+    output-label="转换后的 XML"
     output-language="xml"
     :transformer="transformer"
     :input-validation-rules="rules"

@@ -5,10 +5,10 @@ const props = defineProps<{ signature: SignatureInfo }>();
 const { signature } = toRefs(props);
 
 const tableHeaders = {
-  validityPeriod: 'Validity period',
-  issuedBy: 'Issued by',
-  issuedTo: 'Issued to',
-  pemCertificate: 'PEM certificate',
+  validityPeriod: '有效期',
+  issuedBy: '签发方',
+  issuedTo: '颁发对象',
+  pemCertificate: 'PEM 证书',
 };
 
 const certs = computed(() => signature.value.meta.certs.map((certificate, index) => ({
@@ -17,7 +17,7 @@ const certs = computed(() => signature.value.meta.certs.map((certificate, index)
     notBefore: new Date(certificate.validityPeriod.notBefore).toLocaleString(),
     notAfter: new Date(certificate.validityPeriod.notAfter).toLocaleString(),
   },
-  certificateName: `Certificate ${index + 1}`,
+  certificateName: `证书 ${index + 1}`,
 })),
 );
 </script>
@@ -28,10 +28,10 @@ const certs = computed(() => signature.value.meta.certs.map((certificate, index)
       <template #validityPeriod="{ value }">
         <c-key-value-list
           :items="[{
-            label: 'Not before',
+            label: '生效日期',
             value: value.notBefore,
           }, {
-            label: 'Not after',
+            label: '失效日期',
             value: value.notAfter,
           }]"
         />
@@ -40,22 +40,22 @@ const certs = computed(() => signature.value.meta.certs.map((certificate, index)
       <template #issuedBy="{ value }">
         <c-key-value-list
           :items="[{
-            label: 'Common name',
+            label: '通用名称',
             value: value.commonName,
           }, {
-            label: 'Organization name',
+            label: '组织名称',
             value: value.organizationName,
           }, {
-            label: 'Country name',
+            label: '国家名称',
             value: value.countryName,
           }, {
-            label: 'Locality name',
+            label: '地区名称',
             value: value.localityName,
           }, {
-            label: 'Organizational unit name',
+            label: '组织单位名称',
             value: value.organizationalUnitName,
           }, {
-            label: 'State or province name',
+            label: '州/省名称',
             value: value.stateOrProvinceName,
           }]"
         />
@@ -64,29 +64,29 @@ const certs = computed(() => signature.value.meta.certs.map((certificate, index)
       <template #issuedTo="{ value }">
         <c-key-value-list
           :items="[{
-            label: 'Common name',
+            label: '通用名称',
             value: value.commonName,
           }, {
-            label: 'Organization name',
+            label: '组织名称',
             value: value.organizationName,
           }, {
-            label: 'Country name',
+            label: '国家名称',
             value: value.countryName,
           }, {
-            label: 'Locality name',
+            label: '地区名称',
             value: value.localityName,
           }, {
-            label: 'Organizational unit name',
+            label: '组织单位名称',
             value: value.organizationalUnitName,
           }, {
-            label: 'State or province name',
+            label: '州/省名称',
             value: value.stateOrProvinceName,
           }]"
         />
       </template>
 
       <template #pemCertificate="{ value }">
-        <c-modal-value :value="value" label="View PEM cert">
+        <c-modal-value :value="value" label="查看 PEM 证书">
           <template #value>
             <div break-all text-xs>
               {{ value }}

@@ -12,22 +12,22 @@ const normalizedEmails = computed(() => {
   return emails.value
     .split('\n')
     .map((email) => {
-      return withDefaultOnError(() => normalizeEmail({ email }), `Unable to parse email: ${email}`);
+      return withDefaultOnError(() => normalizeEmail({ email }), `无法解析邮筱：${email}`);
     })
     .join('\n');
 });
 
-const { copy } = useCopy({ source: normalizedEmails, text: 'Normalized emails copied to the clipboard', createToast: true });
+const { copy } = useCopy({ source: normalizedEmails, text: '规范化邮筱已复制到剪贴板', createToast: true });
 </script>
 
 <template>
   <div>
     <div class="mb-2">
-      Raw emails to normalize:
+      要规范化的原始邮筱：
     </div>
     <c-input-text
       v-model:value="emails"
-      placeholder="Put your emails here (one per line)..."
+      placeholder="请在此输入邮筱（每行一个）..."
       rows="3"
       multiline
       autocomplete="off"
@@ -39,11 +39,11 @@ const { copy } = useCopy({ source: normalizedEmails, text: 'Normalized emails co
     />
 
     <div class="mb-2 mt-4">
-      Normalized emails:
+      规范化后的邮筱：
     </div>
     <c-input-text
       :value="normalizedEmails"
-      placeholder="Normalized emails will appear here..."
+      placeholder="规范化后的邮筱将显示在此..."
       rows="3"
       autocomplete="off"
       autocorrect="off"
@@ -55,10 +55,10 @@ const { copy } = useCopy({ source: normalizedEmails, text: 'Normalized emails co
     />
     <div class="mt-4 flex justify-center gap-2">
       <c-button @click="emails = ''">
-        Clear emails
+        清除邮筱
       </c-button>
       <c-button :disabled="!normalizedEmails" @click="copy()">
-        Copy normalized emails
+        复制规范化邮筱
       </c-button>
     </div>
   </div>

@@ -21,23 +21,23 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
 <template>
   <c-card>
     <n-h2 style="margin-bottom: 0">
-      Mime type to extension
+      MIME 类型转文件扩展名
     </n-h2>
     <div style="opacity: 0.8">
-      Know which file extensions are associated to a mime-type
+      查询与 MIME 类型关联的文件扩展名
     </div>
     <c-select
       v-model:value="selectedMimeType"
       searchable
       my-4
       :options="mimeToExtensionsOptions"
-      placeholder="Select your mimetype here... (ex: application/pdf)"
+      placeholder="在此选择 MIME 类型（如：application/pdf）"
     />
 
     <div v-if="extensionsFound.length > 0">
-      Extensions of files with the <n-tag round :bordered="false">
+      具有 <n-tag round :bordered="false">
         {{ selectedMimeType }}
-      </n-tag> mime-type:
+      </n-tag> MIME 类型的文件扩展名：
       <div style="margin-top: 10px">
         <n-tag
           v-for="extension of extensionsFound"
@@ -55,24 +55,23 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
 
   <c-card>
     <n-h2 style="margin-bottom: 0">
-      File extension to mime type
+      文件扩展名转 MIME 类型
     </n-h2>
     <div style="opacity: 0.8">
-      Know which mime type is associated to a file extension
+      查询与文件扩展名关联的 MIME 类型
     </div>
     <c-select
       v-model:value="selectedExtension"
       searchable
       my-4
       :options="extensionToMimeTypeOptions"
-      placeholder="Select your mimetype here... (ex: application/pdf)"
+      placeholder="在此选择文件扩展名（如：.pdf）"
     />
 
     <div v-if="selectedExtension">
-      Mime type associated to the extension <n-tag round :bordered="false">
+      与扩展名 <n-tag round :bordered="false">
         {{ selectedExtension }}
-      </n-tag> file
-      extension:
+      </n-tag> 关联的 MIME 类型：
       <div style="margin-top: 10px">
         <n-tag round :bordered="false" type="primary" style="margin-right: 10px">
           {{ mimeTypeFound }}
@@ -85,8 +84,8 @@ const mimeTypeFound = computed(() => (selectedExtension.value ? extensionToMimeT
     <n-table>
       <thead>
         <tr>
-          <th>Mime types</th>
-          <th>Extensions</th>
+          <th>MIME 类型</th>
+          <th>文件扩展名</th>
         </tr>
       </thead>
       <tbody>
