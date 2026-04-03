@@ -175,6 +175,7 @@ const tools = computed<ToolCategory[]>(() => [
   background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
   transition: all 0.3s ease;
   border-bottom: 1px solid #e2e8f0;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
 
   :deep(.dark) & {
     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
@@ -197,7 +198,15 @@ const tools = computed<ToolCategory[]>(() => [
       height: 60px;
       object-fit: contain;
       margin-bottom: 8px;
-      filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.05));
+      filter: none;
+      opacity: 0.9;
+      mix-blend-mode: multiply;
+      transition: all 0.3s ease;
+
+      :deep(.dark) & {
+        opacity: 0.85;
+        mix-blend-mode: screen;
+      }
     }
 
     .title {
