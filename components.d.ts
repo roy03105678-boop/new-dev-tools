@@ -213,6 +213,7 @@ declare module '@vue/runtime-core' {
     TextToBinary: typeof import('./src/tools/text-to-binary/text-to-binary.vue')['default']
     TextToNatoAlphabet: typeof import('./src/tools/text-to-nato-alphabet/text-to-nato-alphabet.vue')['default']
     TextToUnicode: typeof import('./src/tools/text-to-unicode/text-to-unicode.vue')['default']
+    TodayOverview: typeof import('./src/components/TodayOverview.vue')['default']
     TokenDisplay: typeof import('./src/tools/otp-code-generator-and-validator/token-display.vue')['default']
     'TokenGenerator.tool': typeof import('./src/tools/token-generator/token-generator.tool.vue')['default']
     TomlToJson: typeof import('./src/tools/toml-to-json/toml-to-json.vue')['default']

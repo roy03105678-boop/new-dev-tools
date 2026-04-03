@@ -39,7 +39,7 @@ const tools = computed<ToolCategory[]>(() => [
         <div class="logo-container">
           <img :src="NewLogo" class="logo-img" alt="小牛工具" />
           <div class="title">小牛工具</div>
-          <div class="subtitle">专注打造即用即走的效率助手</div>
+          <div class="subtitle">打造即用即走的效率助手</div>
         </div>
       </RouterLink>
 
@@ -194,8 +194,8 @@ const tools = computed<ToolCategory[]>(() => [
     }
 
     .logo-img {
-      width: 80px;
-      height: 80px;
+      width: 70px;
+      height: 60px;
       object-fit: contain;
       margin-bottom: 8px;
       filter: none;
