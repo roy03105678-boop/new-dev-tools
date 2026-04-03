@@ -37,8 +37,9 @@ const tools = computed<ToolCategory[]>(() => [
     <template #sider>
       <RouterLink to="/" class="hero-wrapper">
         <div class="logo-container">
-          <img :src="NewLogo" class="logo-img" alt="在线工具" />
-          <div class="title">在线工具</div>
+          <img :src="NewLogo" class="logo-img" alt="工具集合站" />
+          <div class="title">工具集合站</div>
+          <div class="subtitle">专注打造即用即走的开发者助手</div>
         </div>
       </RouterLink>
 
@@ -196,6 +197,17 @@ const tools = computed<ToolCategory[]>(() => [
       letter-spacing: 1px;
       color: #2563eb;
       text-shadow: none;
+      margin-bottom: 4px;
+    }
+
+    .subtitle {
+      font-size: 12px;
+      font-weight: 500;
+      color: #64748b;
+      letter-spacing: 0.5px;
+      text-align: center;
+      max-width: 140px;
+      line-height: 1.4;
     }
   }
 }
