@@ -171,7 +171,7 @@ const tools = computed<ToolCategory[]>(() => [
   width: 100%;
   z-index: 10;
   padding: 20px 0;
-  background: linear-gradient(135deg, #18a058 0%, #10b981 100%);
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
   transition: all 0.3s ease;
 
   .logo-container {

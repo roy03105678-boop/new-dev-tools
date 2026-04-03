@@ -85,7 +85,7 @@ const themeVars = useThemeVars();
     ::v-deep(.n-menu-item-content::before) {
       left: 0;
       right: 13px;
-      background: linear-gradient(90deg, #18a058 0%, #10b981 100%) !important;
+      background: linear-gradient(90deg, #2563eb 0%, #3b82f6 100%) !important;
       border-radius: 0 3px 3px 0;
       transition: all 0.2s ease;
     }
@@ -106,7 +106,7 @@ const themeVars = useThemeVars();
       width: 2px;
       height: 100%;
       content: ' ';
-      background: linear-gradient(180deg, #18a058 0%, #10b981 100%);
+      background: linear-gradient(180deg, #2563eb 0%, #3b82f6 100%);
       border-radius: 2px;
       position: absolute;
       top: 0;
@@ -132,8 +132,8 @@ const themeVars = useThemeVars();
   transition: all 0.2s ease;
 
   &:hover {
-    color: #18a058;
-    border-left-color: #18a058;
+    color: #2563eb;
+    border-left-color: #2563eb;
   }
 }
 
@@ -142,7 +142,7 @@ const themeVars = useThemeVars();
 
   &:hover {
     .n-menu-item-content {
-      color: #18a058 !important;
+      color: #2563eb !important;
     }
   }
 }
