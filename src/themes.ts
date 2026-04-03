@@ -39,8 +39,16 @@ export const lightThemeOverrides: GlobalThemeOverrides = {
   },
   AutoComplete: {
     peers: {
-      InternalSelectMenu: { height: '500px' },
+      InternalSelectMenu: { height: '500px', color: '#ffffff' },
     },
+  },
+  Select: {
+    peers: {
+      InternalSelectMenu: { color: '#ffffff' },
+    },
+  },
+  Dropdown: {
+    color: '#ffffff',
   },
 };
 
@@ -96,7 +104,15 @@ export const darkThemeOverrides: GlobalThemeOverrides = {
   },
   AutoComplete: {
     peers: {
-      InternalSelectMenu: { height: '500px', color: '#1f2937' },
+      InternalSelectMenu: { height: '500px', color: '#1e293b' },
     },
+  },
+  Select: {
+    peers: {
+      InternalSelectMenu: { color: '#1e293b' },
+    },
+  },
+  Dropdown: {
+    color: '#1e293b',
   },
 };

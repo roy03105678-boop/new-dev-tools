@@ -176,12 +176,21 @@ const tools = computed<ToolCategory[]>(() => [
   transition: all 0.3s ease;
   border-bottom: 1px solid #e2e8f0;
 
+  :deep(.dark) & {
+    background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+    border-bottom-color: #334155;
+  }
+
   .logo-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     color: #1e293b;
+
+    :deep(.dark) & {
+      color: #e2e8f0;
+    }
 
     .logo-img {
       width: 60px;
@@ -198,6 +207,10 @@ const tools = computed<ToolCategory[]>(() => [
       color: #2563eb;
       text-shadow: none;
       margin-bottom: 4px;
+
+      :deep(.dark) & {
+        color: #60a5fa;
+      }
     }
 
     .subtitle {
@@ -208,6 +221,10 @@ const tools = computed<ToolCategory[]>(() => [
       text-align: center;
       max-width: 140px;
       line-height: 1.4;
+
+      :deep(.dark) & {
+        color: #94a3b8;
+      }
     }
   }
 }
