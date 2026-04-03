@@ -112,5 +112,22 @@ export default defineConfig({
   },
   build: {
     target: 'esnext',
+    minify: 'terser',
+    terserOptions: {
+      compress: {
+        drop_console: true,
+      },
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'vendor-naive-ui': ['naive-ui'],
+          'vendor-icons': ['@vicons/tabler', '@vicons/material', '@iconify-json/mdi'],
+          'vendor-utils': ['lodash', 'date-fns', 'change-case'],
+          'vendor-crypto': ['crypto-js', 'bcryptjs', 'node-forge'],
+        },
+      },
+    },
+    chunkSizeWarningLimit: 1000,
   },
 });

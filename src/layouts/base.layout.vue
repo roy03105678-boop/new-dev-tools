@@ -5,7 +5,7 @@ import { RouterLink } from 'vue-router';
 import { Heart, Home2, Menu2 } from '@vicons/tabler';
 
 import { storeToRefs } from 'pinia';
-import HeroGradient from '../assets/hero-gradient.svg?component';
+import NewLogo from '../assets/new-logo.png';
 import MenuLayout from '../components/MenuLayout.vue';
 import NavbarButtons from '../components/NavbarButtons.vue';
 import { useStyleStore } from '@/stores/style.store';
@@ -36,11 +36,9 @@ const tools = computed<ToolCategory[]>(() => [
   <MenuLayout class="menu-layout" :class="{ isSmallScreen: styleStore.isSmallScreen }">
     <template #sider>
       <RouterLink to="/" class="hero-wrapper">
-        <HeroGradient class="gradient" />
-        <div class="text-wrapper">
-          <div class="title">
-            在线工具
-          </div>
+        <div class="logo-container">
+          <img :src="NewLogo" class="logo-img" alt="在线工具" />
+          <div class="title">在线工具</div>
         </div>
       </RouterLink>
 
@@ -172,43 +170,30 @@ const tools = computed<ToolCategory[]>(() => [
   left: 0;
   width: 100%;
   z-index: 10;
-  overflow: hidden;
+  padding: 20px 0;
+  background: linear-gradient(135deg, #25636c 0%, #14a058 100%);
   transition: all 0.3s ease;
 
-  .gradient {
-    margin-top: -65px;
-  }
-
-  .text-wrapper {
-    position: absolute;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    top: 16px;
+  .logo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     color: #fff;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+    .logo-img {
+      width: 60px;
+      height: 60px;
+      object-fit: contain;
+      margin-bottom: 8px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+    }
 
     .title {
-      font-size: 28px;
+      font-size: 22px;
       font-weight: 700;
       letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .divider {
-      width: 50px;
-      height: 3px;
-      border-radius: 2px;
-      background-color: v-bind('themeVars.primaryColor');
-      margin: 8px auto;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-    }
-
-    .subtitle {
-      font-size: 14px;
-      font-weight: 500;
-      letter-spacing: 0.5px;
-      opacity: 0.95;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
     }
   }
 }
