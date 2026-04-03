@@ -161,22 +161,6 @@ export const toolsByCategory: ToolCategory[] = [
     name: 'Network',
     components: [ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator],
   },
-  {
-    name: 'Measurement',
-    components: [chronometer, temperatureConverter, benchmarkBuilder],
-  },
-  {
-    name: 'Text',
-    components: [
-      loremIpsumGenerator,
-      textStatistics,
-      emojiPicker,
-      stringObfuscator,
-      textDiff,
-      numeronymGenerator,
-      asciiTextDrawer,
-    ],
-  },
 ];
 
 export const tools = toolsByCategory.flatMap(({ components }) => components);
