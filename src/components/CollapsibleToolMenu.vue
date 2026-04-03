@@ -140,6 +140,17 @@ const themeVars = useThemeVars();
 ::v-deep(.n-menu-item) {
   transition: all 0.2s ease;
 
+  &.n-menu-item--selected,
+  &.n-menu-item--selected:hover {
+    .n-menu-item-content {
+      color: #ffffff !important;
+    }
+
+    .n-icon {
+      color: #ffffff !important;
+    }
+  }
+
   &:hover {
     .n-menu-item-content {
       color: #2563eb !important;

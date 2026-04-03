@@ -19,6 +19,11 @@ const theme = useThemeVars();
 .menu-icon-item {
   position: relative;
 
+  :deep(.n-icon) {
+    color: inherit;
+    transition: color 0.2s ease;
+  }
+
   .badge {
     position: absolute;
     background-color: v-bind('theme.primaryColor');
