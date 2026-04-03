@@ -50,15 +50,13 @@ search:
 tools:
   categories:
     favorite-tools: '我的收藏'
-    crypto: '加密'
-    converter: '转换器'
-    web: Web
-    images and videos: '图片和视频'
-    development: '开发'
-    network: '网络'
-    math: '数学'
-    data: '数据'
-    finance: '财务'
+    crypto: '加密工具'
+    converter: '转换工具'
+    web: 'WEB工具'
+    images and videos: '媒体工具'
+    development: '开发工具'
+    network: '网络工具'
+    finance: '财务工具'
 
   interest-calculator:
     title: 利息计算器
