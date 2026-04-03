@@ -71,6 +71,23 @@ tools:
     network: '网络'
     math: '数学'
     data: '数据'
+    finance: '财务'
+
+  interest-calculator:
+    title: 利息计算器
+    description: 精确计算单利和复利，支持多种复利频率。
+  
+  mortgage-calculator:
+    title: 房贷计算器
+    description: 计算房贷利息及月供，支持等额本金和等额本息两种方式。
+  
+  rmb-converter:
+    title: 人民币大小写转换
+    description: 将数字金额转换为人民币大写格式，方便财务报销和填写单据。
+  
+  interest-rate-converter:
+    title: 利率计算器
+    description: 实现年利率、月利率、日利率之间的快速转换。
 
   password-strength-analyser:
     title: 密码强度分析仪

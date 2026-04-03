@@ -70,6 +70,23 @@ tools:
     measurement: Measurement
     text: Text
     data: Data
+    finance: Finance
+
+  interest-calculator:
+    title: Interest Calculator
+    description: Accurately calculate simple and compound interest with various compounding frequencies.
+  
+  mortgage-calculator:
+    title: Mortgage Calculator
+    description: Calculate mortgage interest and monthly payments with both equal installment and equal principal methods.
+  
+  rmb-converter:
+    title: RMB Converter
+    description: Convert numeric amounts into Chinese RMB uppercase format for financial documents.
+  
+  interest-rate-converter:
+    title: Interest Rate Calculator
+    description: Quickly convert between annual, monthly, and daily interest rates.
 
   password-strength-analyser:
     title: Password strength analyser

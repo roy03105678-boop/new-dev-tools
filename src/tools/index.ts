@@ -1,6 +1,10 @@
 import { tool as base64FileConverter } from './base64-file-converter';
 import { tool as base64StringConverter } from './base64-string-converter';
 import { tool as basicAuthGenerator } from './basic-auth-generator';
+import { tool as interestRateConverter } from './interest-rate-converter';
+import { tool as rmbConverter } from './rmb-converter';
+import { tool as mortgageCalculator } from './mortgage-calculator';
+import { tool as interestCalculator } from './interest-calculator';
 import { tool as emailNormalizer } from './email-normalizer';
 
 import { tool as textToUnicode } from './text-to-unicode';
@@ -149,6 +153,10 @@ export const toolsByCategory: ToolCategory[] = [
   {
     name: 'Network',
     components: [ipv4SubnetCalculator, ipv4AddressConverter, ipv4RangeExpander, macAddressLookup, macAddressGenerator, ipv6UlaGenerator],
+  },
+  {
+    name: 'Finance',
+    components: [interestCalculator, mortgageCalculator, rmbConverter, interestRateConverter],
   },
 ];
 
