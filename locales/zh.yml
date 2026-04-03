@@ -4,7 +4,7 @@ home:
     favoriteTools: '我的收藏'
     allTools: '全部工具'
     favoritesDndToolTip: '拖放重新排列收藏夹'
-  subtitle: '专注打造即用即走的开发者助手'
+  subtitle: '专注打造即用即走的效率助手'
   toggleMenu: '切换菜单'
   home: '主页'
   uiLib: 'UI 库'
