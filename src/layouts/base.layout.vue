@@ -37,9 +37,9 @@ const tools = computed<ToolCategory[]>(() => [
     <template #sider>
       <RouterLink to="/" class="hero-wrapper">
         <div class="logo-container">
-          <img :src="NewLogo" class="logo-img" alt="工具集合站" />
-          <div class="title">工具集合站</div>
-          <div class="subtitle">打造即用即走的效率助手</div>
+          <img :src="NewLogo" class="logo-img" alt="小牛工具" />
+          <div class="title">小牛工具</div>
+          <div class="subtitle">专注打造即用即走的开发者助手</div>
         </div>
       </RouterLink>
 
