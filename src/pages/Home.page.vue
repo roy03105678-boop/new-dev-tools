@@ -11,7 +11,7 @@ import { config } from '@/config';
 
 const toolStore = useToolStore();
 
-useHead({ title: 'IT Tools - Handy online tools for developers' });
+useHead({ title: '小牛工具 - 专注打造即用即走的效率助手' });
 const { t } = useI18n();
 
 const favoriteTools = computed(() => toolStore.favoriteTools);

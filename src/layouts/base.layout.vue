@@ -58,8 +58,8 @@ const tools = computed<ToolCategory[]>(() => [
 
           <div>
             © {{ new Date().getFullYear() }}
-            <c-link target="_blank" rel="noopener" href="https://dev.fktool.com">
-              dev.fktool.com
+            <c-link target="_blank" rel="noopener" href="https://onlinetool6.org">
+              onlinetool6.org
             </c-link>
           </div>
         </div>
